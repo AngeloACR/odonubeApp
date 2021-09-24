@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../../services/auth.service';
 
 import { Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
@@ -26,6 +26,6 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.auth.logout();
-    this.router.navigateByUrl('/dashboard');
+    this.router.navigateByUrl('/auth');
   }
 }

@@ -17,6 +17,7 @@
     "cors": "*",
     "express": "*",
     "helmet": "^3.9.0",
+    "jsonwebtoken": "*",
     "node-schedule": "*",
     "bluebird": "*",
     "ftp-srv": "*",

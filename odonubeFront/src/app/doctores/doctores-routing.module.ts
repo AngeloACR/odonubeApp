@@ -6,14 +6,14 @@ import { ListaComponent } from './containers/lista/lista.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: DoctoresComponent,
     children: [
       {
-        path: 'registro',
+        path: "registro",
         component: RegistroComponent,
       },
-      { path: 'lista', component: ListaComponent },
+      { path: "lista", component: ListaComponent },
       /*       {
     path: 'actualizar/:id',
     component: ActualizarComponent 

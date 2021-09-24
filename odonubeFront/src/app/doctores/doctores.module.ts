@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DoctoresRoutingModule } from './doctores-routing.module';
+import { SharedModule } from '../shared/shared.module';
 import { DoctoresComponent } from './doctores.component';
 import { RegistroComponent } from './containers/registro/registro.component';
 import { ListaComponent } from './containers/lista/lista.component';
@@ -17,9 +18,13 @@ import { ListaComponent } from './containers/lista/lista.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    DoctoresRoutingModule
+  ],
+  exports: [
     DoctoresRoutingModule
   ]
 })

@@ -32,7 +32,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-  logUser() {
+  async logUser() {
+    try{
+
     /*     if (this.catchUserErrors()) {
       let errorMsg =
         "Algunos campos son inválidos. Por favor, revise el formulario e intente de nuevo";
@@ -54,8 +56,12 @@ export class LoginComponent implements OnInit {
     };
     this.auth.storeData(logData);
     console.log('login data')
-    this.router.navigateByUrl('/doctores/registro')
+    await this.router.navigateByUrl('/pacientes/registro')
+
+  } catch(e:any){
+    console.log(e.message);
   }
+}
 
   get fLogin() {
     return this.login.controls;

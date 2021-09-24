@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doctores.component.scss']
 })
 export class DoctoresComponent implements OnInit {
+  aMenu: any = {};
 
+  menuOn: boolean = false;
   constructor() { }
 
-  ngOnInit(): void {
+
+  ngOnInit() {
+    this.menuOn = true;
+    this.aMenu = {
+      aMenu: this.menuOn
+    };
   }
 
+  tMenu() {
+    this.menuOn = !this.menuOn;
+    this.aMenu = {
+      aMenu: this.menuOn
+    };
+  }
 }

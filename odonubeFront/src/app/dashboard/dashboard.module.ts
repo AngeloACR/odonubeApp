@@ -21,6 +21,9 @@ import { DashboardComponent } from './dashboard.component';
     ReactiveFormsModule,
     HttpClientModule,
     DashboardRoutingModule
+  ],
+  exports: [
+    DashboardRoutingModule
   ]
 })
 export class DashboardModule { }

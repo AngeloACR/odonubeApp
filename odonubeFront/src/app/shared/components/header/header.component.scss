@@ -26,7 +26,6 @@ $font2: 'Open Sans', sans-serif;
 .headerImg {
   width: 170px;
   margin-left: 15px;
-  padding-top: 7px;
   height: 44px;
 }
 
@@ -66,4 +65,7 @@ $font2: 'Open Sans', sans-serif;
   &:hover {
     font-weight: 700;
   }
+
+  position: absolute;
+  right: 15px;
 }

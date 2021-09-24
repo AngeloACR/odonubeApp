@@ -7,20 +7,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
-import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
-import { HeaderComponent } from './components/header/header.component';
 import { DatePipe } from "@angular/common";
 import { registerLocaleData } from "@angular/common";
 import localeVE from "@angular/common/locales/es-VE";
 @NgModule({
   declarations: [
     AppComponent,
-    SidemenuComponent,
-    HeaderComponent
   ],
   imports: [
-    BrowserModule,/* 
-    SharedModule, */
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
