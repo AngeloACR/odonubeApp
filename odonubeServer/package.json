@@ -1,0 +1,33 @@
+{
+  "name": "odonube_server",
+  "version": "1.0.0",
+  "description": "Servidor de Odonube, contendra principalmente una Api para registrar diversos elementos de un consultorio odontológico en una base de datos MYSQL, e integrado con un api generador de reportes.",
+  "main": "appOdonubeApi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node appOdonubeApi.js"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "compression": "^1.7.0",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "*",
+    "cors": "*",
+    "express": "*",
+    "helmet": "^3.9.0",
+    "node-schedule": "*",
+    "bluebird": "*",
+    "ftp-srv": "*",
+    "cron": "*",
+    "mysql": "*"
+  },
+  "keywords": [
+    "odonube",
+    "odontología",
+    "dental"
+  ],
+  "author": "Tecnobunker",
+  "license": "ISC"
+}

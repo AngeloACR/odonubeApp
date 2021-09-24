@@ -1,0 +1,138 @@
+$primary: #347fc4; //rgb(52,127,196);
+$secondary: #31e981;
+$border-input: #347fc4;
+$third: #161925;
+$font1: 'Roboto', sans-serif;
+$font2: 'Open Sans', sans-serif;
+
+.pageBoxlogin {
+  margin: auto;
+  font-family: $font1;
+  height: 100vh;
+  display: flex;
+  background-color: white;
+  //background: $primary;
+  /*background: linear-gradient(212deg, rgba(52,127,196,1) 0%, rgba(49,233,129,1) 51%);*/
+}
+
+.logBox {
+  width: 340px;
+  height: 500px;
+  background-color: $third;
+
+  -webkit-box-shadow: 0px 12px 13px 5px rgba(0,0,0,0.41);
+  -moz-box-shadow:    0px 12px 13px 5px rgba(0,0,0,0.41);
+  box-shadow:         0px 12px 13px 5px rgba(0,0,0,0.41);
+}
+
+.logoBoxlogin {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & img{
+    width: 100%;
+
+    &.formImglogin {
+      width: 100%;
+      margin: 50px auto 0 auto;
+    }
+  }
+}
+
+.formHeaderlogin {  
+  width: 100%;
+  height: auto;
+  text-align: center;
+  
+  & h1 {
+    color: white;
+    font-weight: 100;
+    font-size: 1.5em;
+    font-family: $font2;
+  }
+}
+
+.formBoxlogin {
+  width: 80%;
+  margin: auto;
+
+  &.formContentlogin {
+    width: 100%;
+    height: auto;
+    padding: 30px auto 0 auto;
+    display: flex;  
+  }
+}
+
+.formInputlogin {
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+
+  & input {
+    width: 100%;
+    padding: 12px;
+    background-color: $third;
+    border: 2px solid $border-input;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-family: $font2;
+    color: white;
+    /*&:focus {
+      
+    }*/
+  }
+}
+
+.errorTaglogin {
+  font-size: 0.8em;
+  color: rgba(219, 199, 199, 0.918);
+  width: 100%;
+  margin-bottom: 18px;
+  text-align: right;
+  font-family: $font2;
+}
+
+.buttonBoxlogin {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+
+  & button {
+    background-color: #0d25aa;
+    border: none;
+    color: white;
+    transition: all 0.4s ease;
+    
+    &:hover {
+      background: $border-input;
+    }
+  }
+}
+
+.formButtonlogin {
+  width: 100%;
+  padding: 15px;
+  cursor: pointer;
+
+    font-size: 1.2em;
+}
+
+.tagBoxlogin {
+  font-size: 10px;
+}
+
+.errorBoxlogin {
+  display: none;
+  height: 0;
+}
+
+.errorActlogin {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

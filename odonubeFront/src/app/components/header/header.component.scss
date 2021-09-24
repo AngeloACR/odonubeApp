@@ -1,0 +1,69 @@
+$primary: #347fc4; //rgb(52,127,196);
+$secondary: #31e981;
+$border-input: #347fc4;
+$third: #161925;
+$font1: 'Roboto', sans-serif;
+$font2: 'Open Sans', sans-serif;
+
+
+.bigHeadBox {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  /*max-height: 25vh;*/
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top;
+}
+
+.faIcon {
+  width: auto;
+  margin-left: 23px;
+  font-size: 13px;
+}
+
+.headerImg {
+  width: 170px;
+  margin-left: 15px;
+  padding-top: 7px;
+  height: 44px;
+}
+
+.hImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.smallHeadBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  background: $third;
+  color: white;
+  font-family: $font2;
+}
+
+.wTag {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 42px;
+}
+
+.aTag {
+  cursor: pointer;
+  margin-right: 30px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  &:hover {
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,142 @@
+$primary: #347fc4; //rgb(52,127,196);
+$secondary: #31e981;
+$border-input: #347fc4;
+$third: #161925;
+$font1: 'Roboto', sans-serif;
+$font2: 'Open Sans', sans-serif;
+$font3: 'Montserrat', sans-serif;
+
+.navBox{
+	width: 100%;
+	height: 100%;
+	z-index: 2500;
+	font-family: $font3;
+}
+
+/*.navBox::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #afccf4;
+    border-color: #9ba6c0;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.navBox::-webkit-scrollbar {
+    width: 12px;
+    background-color: #f5f5f5;
+}
+
+.navBox::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #819fe2;
+}*/
+
+.listMenuBox{
+	width: 100%;
+    overflow: hidden;
+}
+
+.navList{
+    padding: 0px;
+    width: 100%;
+    display: inline-flex;
+    align-self: center;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+}
+
+.menuIcon{
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.navList a{
+    width: 100%;
+    color: white;
+    font-size: 14px;
+}
+
+.navElement{
+	display: flex;
+    align-items: center;
+    color: black;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+	padding: 12px 25px;
+	transition: all 0.3s ease;
+	&:hover {
+		background: #212535;
+	}
+}
+
+a {
+    text-decoration: none !important;	
+}
+
+.navElement a:active{
+	display: flex;
+    align-items: flex-start;
+}
+
+.lBox{
+	display: inline-flex;
+	flex-direction: column;
+	align-items: flex-start;
+	overflow: hidden;
+	width: 100%;
+	margin-bottom: 1px;
+	max-height: 0;
+	transition: max-height 0.2s ease-out;
+}
+
+.navChild{
+	display: flex;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    margin: 10px 23px;
+    padding-left: 7px;
+    padding-top: 6px;
+}
+
+.navChild a{
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 12px;
+}
+
+.navChild:hover{
+	border-left: 3px solid $primary;
+}
+
+.aBox{
+	max-height: 200vh;
+}
+
+.aMenu{
+	background-color: white;
+	margin-bottom: 0;
+	color: #0297E7;
+	font-weight: bold;
+}
+
+.sideFoot{
+	display: block;
+	margin-top: 50px;
+	width: 100%;
+	height: auto; 
+}
+
+.sImg{
+	display: block;
+	width: 80%;
+	position: relative;
+	margin: 0 auto;
+}

@@ -1,0 +1,179 @@
+<div class="modBox">
+    <div class="cardBox">
+      <form
+        class="formBox"
+        [formGroup]="registroUsuario"
+        (ngSubmit)="endRegistro()"
+      >
+        <div class="formContent">
+          <div class="formInput">
+            <label for="">Nombre del paciente*</label>
+            <input
+              class="lInput"
+              type="text"
+              formControlName="name"
+              name="name"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fUsuario.name.errors?.required &&
+              (fUsuario.name.touched || fUsuario.name.dirty)
+            "
+          >
+            Por favor ingrese su nombre
+          </div>
+          <div class="formInput">
+            <label for="">Nombre de los familiares*</label>
+            <input
+              class="lInput"
+              type="text"
+              formControlName="mail"
+              name="mail"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fUsuario.mail.errors?.required &&
+              (fUsuario.mail.touched || fUsuario.mail.dirty)
+            "
+          >
+            Por favor ingrese su correo
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fUsuario.mail.errors?.email &&
+              (fUsuario.mail.touched || fUsuario.mail.dirty)
+            "
+          >
+            Por favor ingrese una dirección de correo válida
+          </div>
+          <div class="formInput">
+            <label for="">Direcciòn*</label>
+            <input
+              class="lInput"
+              type="text"
+              formControlName="username"
+              name="username"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fUsuario.username.errors?.required &&
+              (fUsuario.username.touched || fUsuario.username.dirty)
+            "
+          >
+            Por favor ingrese un nombre de usuario
+          </div>
+          <div class="formInput">
+            <label for="">Número de contacto*</label>
+            <input
+              class="lInput"
+              type="text"
+              formControlName="name"
+              name="name"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fUsuario.name.errors?.required &&
+              (fUsuario.name.touched || fUsuario.name.dirty)
+            "
+          >
+            Por favor ingrese su nombre
+          </div>          
+          <div class="formInput">
+            <label for="">Género</label>
+            <select class="lInput" formControlName="tipo">
+              <option value="Masculino" selected="true">
+                Masculino
+              </option>
+              <option value="Femenino">Femenino</option>
+            </select>
+          </div>
+          <!--       <div class="formInput" *ngIf="!isUpdate">
+         -->
+         <div class="formInput">
+            <label for="">Referencia*</label>
+            <input
+              class="lInput"
+              type="text"
+              formControlName="name"
+              name="name"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fUsuario.name.errors?.required &&
+              (fUsuario.name.touched || fUsuario.name.dirty)
+            "
+          >
+            Por favor ingrese su nombre
+          </div>         
+          <div class="formInput">
+            <label for="">Ocupaciòn*</label>
+            <input
+              class="lInput"
+              type="text"
+              formControlName="password"
+              name="password"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fUsuario.password.errors?.required &&
+              (fUsuario.password.touched || fUsuario.password.dirty)
+            "
+          >
+            Por favor ingrese una contraseña valida
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fUsuario.password.errors?.minlength &&
+              (fUsuario.password.touched || fUsuario.password.dirty)
+            "
+          >
+            La contraseña debe contener al menos 6 carácteres
+          </div>
+
+          <div class="formInput">
+            <label for="">Fecha*</label>
+            <input
+              class="lInput"
+              type="date"
+              formControlName="name"
+              name="name"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fUsuario.name.errors?.required &&
+              (fUsuario.name.touched || fUsuario.name.dirty)
+            "
+          >
+            Por favor ingrese su nombre
+          </div>
+        </div>
+        <button type="submit" class="buttonBox">
+          <p>Registrar usuario</p>
+        </button>
+      </form>
+    </div>
+  
+  <!--   <app-error
+      class="errorBox"
+      [msg]="errorMsg"
+      [ngClass]="showError"
+      (closeError)="closeError()"
+    ></app-error> -->
+  </div>
+  
