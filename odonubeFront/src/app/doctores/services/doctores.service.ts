@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class DoctoresService {
   localSource = 'http://localhost:6800';
-  productionSource = 'https://dashboard.odonube.com';
+  productionSource = 'https://dashboard.odonube.com/api';
 
   //mySource = this.localSource;
   mySource = this.productionSource;
@@ -24,11 +24,11 @@ export class DoctoresService {
     return new Promise((resolve, reject) => {
       this.http.post(address, body, { headers: headers }).subscribe(
         (data: any) => {
-          console.log(data)
+          console.log(data);
           resolve(data);
         },
         (error: any) => {
-          console.log(error)
+          console.log(error);
           reject(new Error(error.error.message));
         }
       );
