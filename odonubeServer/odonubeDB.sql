@@ -1,5 +1,5 @@
 CREATE TABLE Voucher (
-    VOUCHER_ID bigint AUTO_INCREMENT,
+    VOUCHER_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     CHART_OF_ACCOUNT_ID bigint,
     DateOfVoucher datetime NULL,
     ReferenceNumber varchar(500) NULL,
@@ -9,7 +9,7 @@ CREATE TABLE Voucher (
 );
 
 CREATE TABLE UserPermission (
-    UserPermissionID bigint AUTO_INCREMENT,
+    UserPermissionID bigint AUTO_INCREMENT  PRIMARY KEY,
     FormCaption varchar(254) NULL,
     FormName varchar(254) NULL,
     UserID bigint,
@@ -17,7 +17,7 @@ CREATE TABLE UserPermission (
 );
 
 CREATE TABLE TreatmentSickLeave (
-    SLID bigint AUTO_INCREMENT,
+    SLID bigint AUTO_INCREMENT  PRIMARY KEY,
     VID bigint,
     ReferenceNo varchar(254) NULL,
     ApplicationDate datetime NULL,
@@ -30,7 +30,7 @@ CREATE TABLE TreatmentSickLeave (
 );
 
 CREATE TABLE TreatmentProcedure (
-    TRMPDC_ID bigint AUTO_INCREMENT,
+    TRMPDC_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     VID bigint,
     PrescribedProcedure varchar(255) NULL,
     Remarks varchar(255) NULL,
@@ -38,14 +38,14 @@ CREATE TABLE TreatmentProcedure (
 );
 
 CREATE TABLE TreatmentDisease (
-    TDS_ID bigint AUTO_INCREMENT,
+    TDS_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     Disease varchar(255) NULL,
     Diagnosis varchar(255) NULL,
     VID bigint 
 );
 
 CREATE TABLE Treatment (
-    VID bigint AUTO_INCREMENT,
+    VID bigint AUTO_INCREMENT  PRIMARY KEY,
     VisitingDate datetime NULL,
     VisitingTime varchar(254) NULL,
     AppointmentNo bigint NULL,
@@ -76,7 +76,7 @@ CREATE TABLE Treatment (
 );
 
 CREATE TABLE ProductInformation (
-    PRODUCT_INFORMATION_ID bigint AUTO_INCREMENT,
+    PRODUCT_INFORMATION_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     PRODUCT_ID bigint,
     ProductName varchar(500) NULL,
     GenericName varchar(500) NULL,
@@ -92,12 +92,12 @@ CREATE TABLE ProductInformation (
 );
 
 CREATE TABLE ProductCategory (
-    CATEGORY_ID bigint AUTO_INCREMENT,
+    CATEGORY_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     CATEGORY_NAME varchar(250) NULL
 );
 
 CREATE TABLE PrescriptionDetail (
-    PCD_ID bigint AUTO_INCREMENT,
+    PCD_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     PRESCRIPTION_ID bigint ,
     MedicineName varchar(255) NULL,
     Dodge varchar(254) NULL,
@@ -107,7 +107,7 @@ CREATE TABLE PrescriptionDetail (
 );
 
 CREATE TABLE Prescription (
-    PRESCRIPTION_ID bigint AUTO_INCREMENT,
+    PRESCRIPTION_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     PrescriptionDate datetime NULL,
     AppointmentNo varchar(254) NULL,
     VisitID varchar(254) NULL,
@@ -118,7 +118,7 @@ CREATE TABLE Prescription (
 );
 
 CREATE TABLE PhysiciansInformation (
-    DOCTOR_ID bigint AUTO_INCREMENT,
+    DOCTOR_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     DoctorName varchar(500) NULL,
     Speciality varchar(500) NULL,
     Qualification varchar(500) NULL,
@@ -128,7 +128,7 @@ CREATE TABLE PhysiciansInformation (
 );
 
 CREATE TABLE PharmacyBillingDetails (
-    ID bigint AUTO_INCREMENT,
+    ID bigint AUTO_INCREMENT  PRIMARY KEY,
     Pharmacy_Billing_ID bigint NULL,
     PRODUCT_ID bigint ,
     Qty float NULL,
@@ -139,7 +139,7 @@ CREATE TABLE PharmacyBillingDetails (
 );
 
 CREATE TABLE PharmacyBilling (
-    Pharmacy_Billing_ID bigint AUTO_INCREMENT,
+    Pharmacy_Billing_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     BILL_NO bigint NOT NULL,
     BILLING_DATE datetime NULL,
     Patient_ID bigint,
@@ -151,7 +151,7 @@ CREATE TABLE PharmacyBilling (
 );
 
 CREATE TABLE PatientInformation (
-    Patient_ID bigint AUTO_INCREMENT,
+    Patient_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     PatientName varchar(500) NULL,
     ParentNames varchar(500) NULL,
     Gender varchar(254) NULL,
@@ -165,18 +165,18 @@ CREATE TABLE PatientInformation (
 );
 
 CREATE TABLE DiseaseDiagnosis (
-    DISEASE_DIAGNOSIS_ID bigint AUTO_INCREMENT,
+    DISEASE_DIAGNOSIS_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     Disease varchar(255) NULL
 );
 
 CREATE TABLE DentalProcedures ( 
-    PROCEDURES_ID bigint AUTO_INCREMENT,
+    PROCEDURES_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     DENTAL_PROCEDURES varchar(500) NULL,
     PRICE float NULL
 );
 
 CREATE TABLE DentalNotation (
-    NOTATION_ID bigint AUTO_INCREMENT,
+    NOTATION_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     
     ctrlName varchar(254) NULL,
     DentalNo varchar(254) NULL,
@@ -185,7 +185,7 @@ CREATE TABLE DentalNotation (
 );
 
 CREATE TABLE ClinicInformation (
-    CLINIC_ID bigint AUTO_INCREMENT,
+    CLINIC_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     
     ClinicName varchar(500) NULL,
     Phone varchar(500) NULL,
@@ -196,14 +196,14 @@ CREATE TABLE ClinicInformation (
 );
 
 CREATE TABLE ChartOfAccounts (
-    CHART_OF_ACCOUNT_ID bigint AUTO_INCREMENT,
+    CHART_OF_ACCOUNT_ID bigint AUTO_INCREMENT  PRIMARY KEY,
     AccountsName varchar(500) NULL,
     AccountsType varchar(500) NULL,
     AcStatus varchar(254) NULL
 );
 
 CREATE TABLE ApplicationUsers (
-    UserID bigint AUTO_INCREMENT,
+    UserID bigint AUTO_INCREMENT  PRIMARY KEY,
     FullName varchar(500) NULL,
     UserName varchar(500) NULL,
     Password varchar(500) NULL,
