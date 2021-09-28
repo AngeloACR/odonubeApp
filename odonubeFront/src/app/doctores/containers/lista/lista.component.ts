@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { AuthService } from "../../../services/auth.service";
-import { DbHandlerService } from "../../../services/db-handler.service";
+import { DoctoresService } from '../../services/doctores.service';
 import {
   FormBuilder,
   FormGroup,
@@ -40,12 +40,16 @@ export class ListaComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private dbHandler: DbHandlerService,
+    private doctores: DoctoresService,
     private router: Router,
     private fb: FormBuilder
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    let listData: any = await this.doctores.getAll();
+    this.fields = listData.listKeys;
+    this.values = listData.data;
+    this.addText = "Registrar doctor"
 /*     this.initComponent(
       "/cuentasporcobrar",
       "Lista de Cuentas Por Cobrar",
@@ -138,11 +142,11 @@ export class ListaComponent implements OnInit {
   }
 
   openUpdate(event: any, item: any) {
-    this.router.navigateByUrl("/actualizar/cuentaporcobrar/" + item);
+    this.router.navigateByUrl("/doctores/actualizar/" + item);
   }
 
   agregar() {
-    this.router.navigateByUrl("/registro/cuentaporcobrar");
+    this.router.navigateByUrl("/doctores/registro");
   }
 
   habilitarElemento(event: any, elemento: any, isHabilitar: any) {}

@@ -12,9 +12,12 @@ module.exports = {
     host: 'localhost',
 
     // DATABASE DATA
+    mysqlPortLocal: '3306',
+    mysqlUserLocal: 'root',
+    mysqlPassLocal: '123456..',
     mysqlPort: '3306',
-    mysqlUser: 'serverUser',
-    mysqlPass: '',
+    mysqlUser: 'odonube',
+    mysqlPass: '$Odonube123..$',
     dbName: "odonubeDB",
     connectionLimit: 100,
 

@@ -99,6 +99,107 @@ export class SidemenuComponent implements OnInit {
             id: 1
           }
         ]
+      },
+      {
+        name: "Tratamientos",
+        link: "/tratamientos",
+        id: 2,
+        icon: faCalendarPlus,
+        boxOn: false,
+        childs: [
+          {
+            name: "Registrar tratamiento",
+            link: "/tratamientos/registro",
+            id: 0
+          },
+          {
+            name: "Generar Baja médica",
+            link: "/tratamientos/baja",
+            id: 1
+          }
+        ]
+      },
+      {
+        name: "Prescripciones",
+        link: "/prescripciones",
+        id: 3,
+        icon: faCalendarPlus,
+        boxOn: false,
+        childs: [
+          {
+            name: "Registrar prescripcion",
+            link: "/prescripciones/registro",
+            id: 0
+          },
+          {
+            name: "Lista de prescripciones",
+            link: "/prescripciones/lista",
+            id: 1
+          },
+          {
+            name: "Registrar visita de paciente",
+            link: "/prescripciones/visita",
+            id: 2
+          },
+          {
+            name: "Lista de visitas",
+            link: "/prescripciones/visita-lista",
+            id: 3
+          }
+        ]
+      },
+      {
+        name: "Finanzas",
+        link: "/finanzas",
+        id: 4,
+        icon: faCalendarPlus,
+        boxOn: false,
+        childs: [
+          {
+            name: "Registrar cuenta",
+            link: "/finanzas/cuentas",
+            id: 0
+          },
+          {
+            name: "Registrar voucher",
+            link: "/finanzas/voucher",
+            id: 1
+          },
+          {
+            name: "Lista de vouchers",
+            link: "/finanzas/voucher-lista",
+            id: 2
+          }
+        ]
+      },
+      {
+        name: "Administración",
+        link: "/administración",
+        id: 5,
+        icon: faCalendarPlus,
+        boxOn: false,
+        childs: [
+          {
+            name: "Registrar usuario",
+            link: "/administracion/usuarios",
+            id: 0
+          },
+          {
+            name: "Lista de usuarios",
+            link: "/administracion/usuarios-lista",
+            id: 1
+          },
+          {
+            name: "Registrar clínica",
+            link: "/administracion/clinica",
+            id: 2
+          },
+          {
+            name: "Ver permisos",
+            link: "/administracion/permisos",
+            id: 3
+          }
+        ]
       }
     ];
   }

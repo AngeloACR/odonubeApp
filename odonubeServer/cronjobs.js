@@ -1,5 +1,4 @@
-const Resultados = require('./results/controller/main');
-const Cache = require('./cache/controller/main');
+
 var CronJob = require('cron').CronJob;
 
 module.exports.setCronJobs = function () {

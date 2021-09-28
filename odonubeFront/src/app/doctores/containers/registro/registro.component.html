@@ -2,7 +2,7 @@
   <div class="cardBox">
     <form
       class="formBox"
-      [formGroup]="registroUsuario"
+      [formGroup]="registroDoctor"
       (ngSubmit)="endRegistro()"
     >
       <div class="formContent">
@@ -18,122 +18,113 @@
         <div
           class="errorTag"
           *ngIf="
-            fUsuario.name.errors?.required &&
-            (fUsuario.name.touched || fUsuario.name.dirty)
+            fDoctor.name.errors?.required &&
+            (fDoctor.name.touched || fDoctor.name.dirty)
           "
         >
-          Por favor ingrese su nombre
+          Por favor ingrese el nombre del doctor
         </div>
         <div class="formInput">
           <label for="">Especialidad*</label>
           <input
             class="lInput"
             type="text"
-            formControlName="mail"
-            name="mail"
+            formControlName="speciality"
+            name="speciality"
           />
         </div>
         <div
           class="errorTag"
           *ngIf="
-            fUsuario.mail.errors?.required &&
-            (fUsuario.mail.touched || fUsuario.mail.dirty)
+            fDoctor.speciality.errors?.required &&
+            (fDoctor.speciality.touched || fDoctor.speciality.dirty)
           "
         >
-          Por favor ingrese su correo
-        </div>
-        <div
-          class="errorTag"
-          *ngIf="
-            fUsuario.mail.errors?.email &&
-            (fUsuario.mail.touched || fUsuario.mail.dirty)
-          "
-        >
-          Por favor ingrese una dirección de correo válida
+          Por favor ingrese la especialidad del doctor
         </div>
         <div class="formInput">
           <label for="">Cualificación*</label>
           <input
             class="lInput"
             type="text"
-            formControlName="username"
-            name="username"
+            formControlName="qualification"
+            name="qualification"
           />
         </div>
         <div
           class="errorTag"
           *ngIf="
-            fUsuario.username.errors?.required &&
-            (fUsuario.username.touched || fUsuario.username.dirty)
+            fDoctor.qualification.errors?.required &&
+            (fDoctor.qualification.touched || fDoctor.qualification.dirty)
           "
         >
-          Por favor ingrese un nombre de usuario
+          Por favor ingrese la cualificación del doctor
         </div>
         <div class="formInput">
           <label for="">Direcciòn*</label>
           <input
             class="lInput"
             type="text"
-            formControlName="password"
-            name="password"
+            formControlName="address"
+            name="address"
           />
         </div>
         <div
           class="errorTag"
           *ngIf="
-            fUsuario.password.errors?.required &&
-            (fUsuario.password.touched || fUsuario.password.dirty)
+            fDoctor.address.errors?.required &&
+            (fDoctor.address.touched || fDoctor.address.dirty)
           "
         >
-          Por favor ingrese una contraseña valida
+          Por favor ingrese una dirección
         </div>
         <div class="formInput">
           <label for="">Número de contacto*</label>
           <input
             class="lInput"
             type="text"
-            formControlName="name"
-            name="name"
+            formControlName="contact"
+            name="contact"
           />
         </div>
         <div
           class="errorTag"
           *ngIf="
-            fUsuario.name.errors?.required &&
-            (fUsuario.name.touched || fUsuario.name.dirty)
+            fDoctor.contact.errors?.required &&
+            (fDoctor.contact.touched || fDoctor.contact.dirty)
           "
         >
-          Por favor ingrese su nombre
+          Por favor ingrese el número de contacto del doctor
         </div>
         <div class="formInput">
           <label for="">Fecha*</label>
           <input
             class="lInput"
             type="date"
-            formControlName="name"
-            name="name"
+            formControlName="date"
+            name="date"
           />
         </div>
         <div
           class="errorTag"
           *ngIf="
-            fUsuario.name.errors?.required &&
-            (fUsuario.name.touched || fUsuario.name.dirty)
+            fDoctor.date.errors?.required &&
+            (fDoctor.date.touched || fDoctor.date.dirty)
           "
         >
-          Por favor ingrese su nombre
+          Por favor ingrese la fecha de ingreso del doctor al sistema
         </div>
       </div>
       <button type="submit" class="buttonBox">
-        <p>Registrar usuario</p>
+        <p>Registrar doctor</p>
       </button>
     </form>
   </div>
 
-  <!--   <app-error
+    <app-error
     class="errorBox"
     [msg]="errorMsg"
     [ngClass]="showError"
     (closeError)="closeError()"
-  ></app-error> -->
+  ></app-error>
 </div>

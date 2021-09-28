@@ -4,7 +4,6 @@ const config = require('./config/environment');
 const cronjobs = require('./cronjobs');
 
 // https://www.nginx.com/blog/nginx-caching-guide/
-const connection = db.initConnect();
 
 const apiPort = config.apiPort;
 const apiApp = apiServer.init(apiPort);

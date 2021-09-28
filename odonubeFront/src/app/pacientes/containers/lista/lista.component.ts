@@ -1,26 +1,27 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { AuthService } from "../../../services/auth.service";
-import { DbHandlerService } from "../../../services/db-handler.service";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AuthService } from '../../../services/auth.service';
+import { PacientesService } from '../../services/pacientes.service';
+
 import {
   FormBuilder,
   FormGroup,
   FormControl,
-  Validators
-} from "@angular/forms";
-import { Router } from "@angular/router";
-import { forkJoin } from "rxjs";
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { forkJoin } from 'rxjs';
 import {
   faTrashAlt,
   faFilePdf,
   faEdit,
-  faEye
-} from "@fortawesome/free-solid-svg-icons";
-import { DatePipe } from "@angular/common";
+  faEye,
+} from '@fortawesome/free-solid-svg-icons';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
-  styleUrls: ['./lista.component.scss']
+  styleUrls: ['./lista.component.scss'],
 })
 export class ListaComponent implements OnInit {
   faEye = faEye;
@@ -40,13 +41,19 @@ export class ListaComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private dbHandler: DbHandlerService,
+    private pacientes: PacientesService,
+
     private router: Router,
     private fb: FormBuilder
   ) {}
 
-  ngOnInit() {
-/*     this.initComponent(
+  async ngOnInit() {
+    let listData: any = await this.pacientes.getAll();
+    console.log(listData)
+    this.fields = listData.listKeys;
+    this.values = listData.data;
+    this.addText = "Registrar paciente";
+    /*     this.initComponent(
       "/cuentasporcobrar",
       "Lista de Cuentas Por Cobrar",
       "Agregar Cuentas Por Cobrar",
@@ -73,7 +80,7 @@ export class ListaComponent implements OnInit {
 
   initForm() {
     this.filterForm = new FormGroup({
-      tipo: new FormControl("")
+      tipo: new FormControl(''),
     });
   }
 
@@ -89,7 +96,7 @@ export class ListaComponent implements OnInit {
   isVendedor: boolean;
 
   deleteItem(event: any, index: any) {
-/*     let auxValues = this.dbHandler.getLocal(this.name + "Values");
+    /*     let auxValues = this.dbHandler.getLocal(this.name + "Values");
     let item = auxValues[index];
     var myEnd = this.endpoint;
     let type = this.auth.getType();
@@ -127,22 +134,22 @@ export class ListaComponent implements OnInit {
 
   openConfirm() {
     this.showConfirm = {
-      confirmAct: true
+      confirmAct: true,
     };
   }
 
   closeConfirm() {
     this.showConfirm = {
-      confirmAct: false
+      confirmAct: false,
     };
   }
 
   openUpdate(event: any, item: any) {
-    this.router.navigateByUrl("/actualizar/cuentaporcobrar/" + item);
+    this.router.navigateByUrl('/pacientes/actualizar/' + item);
   }
 
   agregar() {
-    this.router.navigateByUrl("/registro/cuentaporcobrar");
+    this.router.navigateByUrl('/pacientes/registro');
   }
 
   habilitarElemento(event: any, elemento: any, isHabilitar: any) {}
@@ -153,13 +160,13 @@ export class ListaComponent implements OnInit {
   openError(msg: any) {
     this.errorMsg = msg;
     this.showError = {
-      errorAct: true
+      errorAct: true,
     };
   }
 
   closeError() {
     this.showError = {
-      errorAct: false
+      errorAct: false,
     };
   }
 }

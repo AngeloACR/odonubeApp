@@ -1,1 +1,15 @@
-<p>finanzas works!</p>
+<div class="appBox">
+    <div class="headerBox">
+      <app-header (menu)="tMenu()"></app-header>
+    </div>
+    <div class="panelBox">
+      <div class="menuBox" [ngClass]="aMenu">
+        <app-sidemenu></app-sidemenu>
+      </div>
+      <div class="contentBox">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  
+  
