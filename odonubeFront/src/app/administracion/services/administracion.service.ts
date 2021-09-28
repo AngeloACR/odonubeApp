@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class AdministracionService {
   localSource = 'http://localhost:6800';
-  productionSource = 'https://dashboard.odonube.com/api';
+  productionSource = 'https://api.odonube.com';
 
   //mySource = this.localSource;
   mySource = this.productionSource;
