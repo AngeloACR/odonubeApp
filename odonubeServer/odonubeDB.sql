@@ -1,6 +1,6 @@
 CREATE TABLE Voucher (
     VOUCHER_ID bigint AUTO_INCREMENT,
-    CHART_OF_ACCOUNT_ID bigint AUTO_INCREMENT,
+    CHART_OF_ACCOUNT_ID bigint,
     DateOfVoucher datetime NULL,
     ReferenceNumber varchar(500) NULL,
     Remark varchar(255) NULL,
@@ -9,14 +9,16 @@ CREATE TABLE Voucher (
 );
 
 CREATE TABLE UserPermission (
+    UserPermissionID bigint AUTO_INCREMENT,
     FormCaption varchar(254) NULL,
     FormName varchar(254) NULL,
-    UserID bigint AUTO_INCREMENT,
+    UserID bigint,
     Active bit NULL
 );
 
 CREATE TABLE TreatmentSickLeave (
-    VID bigint AUTO_INCREMENT,
+    SLID bigint AUTO_INCREMENT,
+    VID bigint,
     ReferenceNo varchar(254) NULL,
     ApplicationDate datetime NULL,
     PatientName varchar(500) NULL,
@@ -29,7 +31,7 @@ CREATE TABLE TreatmentSickLeave (
 
 CREATE TABLE TreatmentProcedure (
     TRMPDC_ID bigint AUTO_INCREMENT,
-    VID bigint AUTO_INCREMENT,
+    VID bigint,
     PrescribedProcedure varchar(255) NULL,
     Remarks varchar(255) NULL,
     Price float DEFAULT ((0)) NULL
@@ -39,7 +41,7 @@ CREATE TABLE TreatmentDisease (
     TDS_ID bigint AUTO_INCREMENT,
     Disease varchar(255) NULL,
     Diagnosis varchar(255) NULL,
-    VID bigint AUTO_INCREMENT
+    VID bigint 
 );
 
 CREATE TABLE Treatment (
@@ -47,7 +49,7 @@ CREATE TABLE Treatment (
     VisitingDate datetime NULL,
     VisitingTime varchar(254) NULL,
     AppointmentNo bigint NULL,
-    Patient_ID bigint AUTO_INCREMENT,
+    Patient_ID bigint,
     PatientName varchar(254) NULL,
     PatientAge varchar(254) NULL,
     Gender varchar(254) NULL,
@@ -74,7 +76,8 @@ CREATE TABLE Treatment (
 );
 
 CREATE TABLE ProductInformation (
-    PRODUCT_ID bigint AUTO_INCREMENT,
+    PRODUCT_INFORMATION_ID bigint AUTO_INCREMENT,
+    PRODUCT_ID bigint,
     ProductName varchar(500) NULL,
     GenericName varchar(500) NULL,
     CATEGORY_ID bigint DEFAULT ((0)) NULL,
@@ -95,7 +98,7 @@ CREATE TABLE ProductCategory (
 
 CREATE TABLE PrescriptionDetail (
     PCD_ID bigint AUTO_INCREMENT,
-    PRESCRIPTION_ID bigint AUTO_INCREMENT,
+    PRESCRIPTION_ID bigint ,
     MedicineName varchar(255) NULL,
     Dodge varchar(254) NULL,
     Duration varchar(254) NULL,
@@ -108,7 +111,7 @@ CREATE TABLE Prescription (
     PrescriptionDate datetime NULL,
     AppointmentNo varchar(254) NULL,
     VisitID varchar(254) NULL,
-    Patient_ID bigint AUTO_INCREMENT,
+    Patient_ID bigint ,
     PatientName varchar(255) NULL,
     Age varchar(254) NULL,
     Gender varchar(254) NULL
@@ -126,8 +129,8 @@ CREATE TABLE PhysiciansInformation (
 
 CREATE TABLE PharmacyBillingDetails (
     ID bigint AUTO_INCREMENT,
-    BILL_NO bigint NULL,
-    PRODUCT_ID bigint AUTO_INCREMENT,
+    Pharmacy_Billing_ID bigint NULL,
+    PRODUCT_ID bigint ,
     Qty float NULL,
     UnitCost float NULL,
     UnitSales float NULL,
@@ -136,9 +139,10 @@ CREATE TABLE PharmacyBillingDetails (
 );
 
 CREATE TABLE PharmacyBilling (
+    Pharmacy_Billing_ID bigint AUTO_INCREMENT,
     BILL_NO bigint NOT NULL,
     BILLING_DATE datetime NULL,
-    Patient_ID bigint AUTO_INCREMENT,
+    Patient_ID bigint,
     WalkInCustomerName varchar(500) NULL,
     Total float NULL,
     Paid_PAYMENT float NULL,
@@ -165,13 +169,15 @@ CREATE TABLE DiseaseDiagnosis (
     Disease varchar(255) NULL
 );
 
-CREATE TABLE DentalProcedures (
+CREATE TABLE DentalProcedures ( 
     PROCEDURES_ID bigint AUTO_INCREMENT,
     DENTAL_PROCEDURES varchar(500) NULL,
     PRICE float NULL
 );
 
 CREATE TABLE DentalNotation (
+    NOTATION_ID bigint AUTO_INCREMENT,
+    
     ctrlName varchar(254) NULL,
     DentalNo varchar(254) NULL,
     DentalNotation varchar(254) NULL,
@@ -179,6 +185,8 @@ CREATE TABLE DentalNotation (
 );
 
 CREATE TABLE ClinicInformation (
+    CLINIC_ID bigint AUTO_INCREMENT,
+    
     ClinicName varchar(500) NULL,
     Phone varchar(500) NULL,
     Address varchar(255) NULL,
@@ -210,31 +218,28 @@ CREATE TABLE ApplicationUsers (
 
 
  ALTER TABLE Voucher ADD CONSTRAINT PK__Voucher__60E7A0B3173876EA PRIMARY KEY (VOUCHER_ID);
- 
- ALTER TABLE TreatmentProcedure ADD CONSTRAINT PK__Treatment__1A80ED7C300424B4 PRIMARY KEY (TRMPDC_ID);
- 
- ALTER TABLE TreatmentDisease ADD CONSTRAINT PK__Treatment__5D4C3E8C37A5467C PRIMARY KEY (TDS_ID);
- 
- ALTER TABLE Treatment ADD CONSTRAINT PK__Treatment__C5DF22BB276EDEB3 PRIMARY KEY (VID);
- 
- ALTER TABLE ProductCategory ADD CONSTRAINT PK__ProductC__E7DA297C09DE7BCC PRIMARY KEY (CATEGORY_ID);
- 
- ALTER TABLE PrescriptionDetail ADD CONSTRAINT PK__Prescrip__B1EF791549C3F6B7 PRIMARY KEY (PCD_ID);
- 
- ALTER TABLE Prescription ADD CONSTRAINT PK__Prescrip__83756B5F4222D4EF PRIMARY KEY (PRESCRIPTION_ID);
- 
- ALTER TABLE PhysiciansInformation ADD CONSTRAINT PK__Physicia__596ABDB00DAF0CB0 PRIMARY KEY (DOCTOR_ID);
- 
- ALTER TABLE PharmacyBillingDetails ADD CONSTRAINT PK__Pharmacy__3214EC271ED998B2 PRIMARY KEY (ID);
- 
- ALTER TABLE PharmacyBilling ADD CONSTRAINT PK__Pharmacy__0856FE9F1B0907CE PRIMARY KEY (BILL_NO);
- 
- ALTER TABLE PatientInformation ADD CONSTRAINT PK__Patient__C1A88B597F60ED59 PRIMARY KEY (Patient_ID);
- 
- ALTER TABLE DiseaseDiagnosis ADD CONSTRAINT PK__DiseaseD__121D104833D4B598 PRIMARY KEY (DISEASE_DIAGNOSIS_ID);
- 
- ALTER TABLE DentalProcedures ADD CONSTRAINT PK__DentalPr__EA14109F239E4DCF PRIMARY KEY (PROCEDURES_ID);
- 
- ALTER TABLE ChartOfAccounts ADD CONSTRAINT PK__ChartOfA__83960DB71367E606 PRIMARY KEY (CHART_OF_ACCOUNT_ID);
- 
  ALTER TABLE ApplicationUsers ADD CONSTRAINT PK__Applicat__1788CCAC0519C6AF PRIMARY KEY (UserID);
+ ALTER TABLE TreatmentProcedure ADD CONSTRAINT PK__Treatment__1A80ED7C300424B4 PRIMARY KEY (TRMPDC_ID);
+ ALTER TABLE TreatmentDisease ADD CONSTRAINT PK__Treatment__5D4C3E8C37A5467C PRIMARY KEY (TDS_ID);
+ ALTER TABLE Treatment ADD CONSTRAINT PK__Treatment__C5DF22BB276EDEB3 PRIMARY KEY (VID);
+ ALTER TABLE TreatmentSickLeave ADD CONSTRAINT PK__Treatment__C5DF22BB276EDEB8 PRIMARY KEY (SLID);
+ ALTER TABLE ProductCategory ADD CONSTRAINT PK__ProductC__E7DA297C09DE7BCC PRIMARY KEY (CATEGORY_ID); 
+ ALTER TABLE PrescriptionDetail ADD CONSTRAINT PK__Prescrip__B1EF791549C3F6B7 PRIMARY KEY (PCD_ID);
+ ALTER TABLE Prescription ADD CONSTRAINT PK__Prescrip__83756B5F4222D4EF PRIMARY KEY (PRESCRIPTION_ID);
+ ALTER TABLE PhysiciansInformation ADD CONSTRAINT PK__Physicia__596ABDB00DAF0CB0 PRIMARY KEY (DOCTOR_ID);
+ ALTER TABLE PharmacyBillingDetails ADD CONSTRAINT PK__Pharmacy__3214EC271ED998B2 PRIMARY KEY (ID);
+ ALTER TABLE PharmacyBilling ADD CONSTRAINT PK__Pharmacy__0856FE9F1B0907CE PRIMARY KEY (Pharmacy_Billing_ID);
+ ALTER TABLE PatientInformation ADD CONSTRAINT PK__Patient__C1A88B597F60ED59 PRIMARY KEY (Patient_ID);
+ ALTER TABLE DiseaseDiagnosis ADD CONSTRAINT PK__DiseaseD__121D104833D4B598 PRIMARY KEY (DISEASE_DIAGNOSIS_ID);
+ ALTER TABLE DentalProcedures ADD CONSTRAINT PK__DentalPr__EA14109F239E4DCF PRIMARY KEY (PROCEDURES_ID);
+ ALTER TABLE ChartOfAccounts ADD CONSTRAINT PK__ChartOfA__83960DB71367E606 PRIMARY KEY (CHART_OF_ACCOUNT_ID);
+ ALTER TABLE UserPermission ADD CONSTRAINT PK__UserP__1788CCAC0519AE58 PRIMARY KEY (UserPermissionID);
+ ALTER TABLE ProductInformation ADD CONSTRAINT PK__ProductIn__1788CCAC0519BD69 PRIMARY KEY (PRODUCT_INFORMATION_ID);
+ ALTER TABLE DentalNotation ADD CONSTRAINT PK__Denta__1788CCAC05196F7D PRIMARY KEY (NOTATION_ID);
+ ALTER TABLE ClinicInformation ADD CONSTRAINT PK__ClinicIn__1788CCAC0519AAA2 PRIMARY KEY (CLINIC_ID);
+
+
+
+
+
+
