@@ -1,1 +1,167 @@
-<p>registro-prescripciones works!</p>
+<div class="modBox">
+    <div class="cardBox">
+      <form
+        class="formBox"
+        [formGroup]="registroPrescripcion"
+        (ngSubmit)="endRegistro()"
+      >
+        <div class="formContent">
+          <div class="formInput">
+            <label for="">PRESCRIPCION#*</label>
+            <input
+              class="lInput"
+              type="number"
+              formControlName="prescripcion"
+              name="prescripcion"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fPrescripcion.prescripcion.errors?.required &&
+              (fPrescripcion.prescripcion.touched || fPrescripcion.prescripcion.dirty)
+            "
+          >
+            Por favor ingrese el numero de prescripcion
+          </div>
+          <div class="formInput">
+            <label for="">Fecha*</label>
+            <input
+              class="lInput"
+              type="date"
+              formControlName="date"
+              name="date"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fPrescripcion.date.errors?.required &&
+              (fPrescripcion.date.touched || fPrescripcion.date.dirty)
+            "
+          >
+            Por favor ingrese la fecha
+          </div>
+          <div class="formInput">
+            <label for="">APPNT#*</label>
+            <input
+              class="lInput"
+              type="number"
+              formControlName="appnt"
+              name="appnt"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fPrescripcion.appnt.errors?.required &&
+              (fPrescripcion.appnt.touched || fPrescripcion.appnt.dirty)
+            "
+          >
+            Por favor ingrese el appnt
+          </div>
+          <div class="formInput">
+            <label for="">Visita*</label>
+            <input
+              class="lInput"
+              type="number"
+              formControlName="visit"
+              name="visit"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fPrescripcion.visit.errors?.required &&
+              (fPrescripcion.visit.touched || fPrescripcion.visit.dirty)
+            "
+          >
+            Por favor ingrese el numero de visita
+          </div>
+          <div class="formInput">
+            <label for="">ID del paciente*</label>
+            <input
+              class="lInput"
+              type="number"
+              formControlName="idPatient"
+              name="idPatient"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fPrescripcion.idPatient.errors?.required &&
+              (fPrescripcion.idPatient.touched || fPrescripcion.idPatient.dirty)
+            "
+          >
+            Por favor ingrese el id del paciente
+          </div>
+          <div class="formInput">
+            <label for="">Nombre del paciente*</label>
+            <input
+              class="lInput"
+              type="text"
+              formControlName="patientName"
+              name="patientName"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fPrescripcion.patientName.errors?.required &&
+              (fPrescripcion.patientName.touched || fPrescripcion.patientName.dirty)
+            "
+          >
+            Por favor ingrese la el nombre del paciente
+          </div>
+          <div class="formInput">
+            <label for="">Edad del paciente*</label>
+            <input
+              class="lInput"
+              type="number"
+              formControlName="patientAge"
+              name="patientAge"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fPrescripcion.patientAge.errors?.required &&
+              (fPrescripcion.patientAge.touched || fPrescripcion.patientAge.dirty)
+            "
+          >
+            Por favor ingrese la edad del paciente
+          </div>
+          <div class="formInput">
+            <label for="">Genero del paciente*</label>
+            <input
+              class="lInput"
+              type="text"
+              formControlName="patientGender"
+              name="patientGender"
+            />
+          </div>
+          <div
+            class="errorTag"
+            *ngIf="
+              fPrescripcion.patientGender.errors?.required &&
+              (fPrescripcion.patientGender.touched || fPrescripcion.patientGender.dirty)
+            "
+          >
+            Por favor ingrese el genero del paciente
+          </div>
+        </div>
+        <button type="submit" class="buttonBox">
+          <p>Registrar Prescripcion</p>
+        </button>
+      </form>
+    </div>
+  
+      <app-error
+      class="errorBox"
+      [msg]="errorMsg"
+      [ngClass]="showError"
+      (closeError)="closeError()"
+    ></app-error>
+  </div>
+  
