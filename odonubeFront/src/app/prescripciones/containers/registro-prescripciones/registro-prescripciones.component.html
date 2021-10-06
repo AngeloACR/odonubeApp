@@ -133,13 +133,13 @@
             Por favor ingrese la edad del paciente
           </div>
           <div class="formInput">
-            <label for="">Genero del paciente*</label>
-            <input
-              class="lInput"
-              type="text"
-              formControlName="patientGender"
-              name="patientGender"
-            />
+            <label for="">Género</label>
+            <select class="lInput" formControlName="patientGender">
+              <option value="Masculino" selected="true">
+                Masculino
+              </option>
+              <option value="Femenino">Femenino</option>
+            </select>
           </div>
           <div
             class="errorTag"

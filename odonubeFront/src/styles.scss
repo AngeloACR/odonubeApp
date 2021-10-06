@@ -80,7 +80,7 @@ body {
       }
     }
     .contentBox {
-      margin-left: 10px;
+      /* margin-left: 10px; */
       width: 100%;
       overflow: scroll;
 
@@ -114,6 +114,15 @@ body {
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
+  background-color: #cecece;
+
+  .titleBox {
+    width:100%; 
+    color:#fff; 
+    background-color: #073e41; 
+    padding:16px; 
+    text-align:left;
+  }
 }
 
 .buttonBox {
@@ -128,10 +137,11 @@ body {
   height: 90vh;
   margin: auto;
   position: relative;
+  
 }
 
 .formInput select {
-  background-color: white;
+  background-color: #cecece;
 }
 
 .formAct {
@@ -486,7 +496,7 @@ body {
   height: auto;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #cecece;
   padding: 12px;
   color: #161925;
   border-radius: 5px;
@@ -496,26 +506,28 @@ body {
   width: 100%;
   margin: 12px auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
-  padding: 10px 19px;
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.19);
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  // border-radius: 6px;
+  // padding: 10px 0;
+  // box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.19);
 
   & input,
   select,
   textarea {
     width: 60%;
     font-size: 0.9em;
-    padding: 5px;
+    padding: 4px;
   }
 }
 
 .formInput label {
   white-space: nowrap;
-  margin-right: 23px;
+  // margin-right: 23px;
+  // margin-bottom: 10px;
   width: 35%;
-  font-size: 13px;
+  font-size: 12px;
   font-family: $font3;
 }
 
