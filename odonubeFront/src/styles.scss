@@ -82,7 +82,8 @@ body {
     .contentBox {
       /* margin-left: 10px; */
       width: 100%;
-      overflow: scroll;
+      // overflow: scroll;
+      overflow: auto;
 
       &::-webkit-scrollbar-track {
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -133,10 +134,10 @@ body {
 }
 
 .cardBox {
-  width: 95%;
-  height: 90vh;
+  width: 100%;
+  // height: 90vh;
   margin: auto;
-  position: relative;
+  // position: relative;
   
 }
 
@@ -207,6 +208,8 @@ body {
 
 .listBox {
   width: 100%;
+  height: 70vh;
+  overflow: auto;
 }
 
 .titleRow {
@@ -277,9 +280,9 @@ body {
 }
 
 .faIcon {
-  margin: 10px 12px;
+  margin: 5px;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 7px;
 }
 
 .actionButton:active {
@@ -365,6 +368,7 @@ body {
 
 .classtable {
   width: 100%;
+  border-spacing: 0px !important;
 
   background-color: white;
   -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.19);
@@ -384,13 +388,14 @@ body {
 
 .classthead {
   width: 100%;
-  border-bottom: 0.5px solid #161925b6;
-  //background-color: #161925;
+  background-color: #073e41 !important;
+  padding: 10px 0px;
 }
 
 .classthead .classtr {
   width: 100%;
   margin: auto;
+  background-color: #073e41;
 }
 
 .classthead .classtr2 {
@@ -400,26 +405,26 @@ body {
 }
 
 .classthead th:nth-child(1) {
-  width: 120px;
+  // width: 120px;
 }
 
 .classthead .classtr {
-  background-color: $row-color-header;
+  // background-color: $row-color-header;
+
 }
 
-.classtbody .classtr:nth-child(odd) {
-  background-color: $row-color-one;
+.classtbody .classtr:nth-child(2n+1) {
+  background-color: #fff;
 }
 
-.classtbody .classtr:nth-child(even) {
-  background-color: $row-color-secondary;
+.classtbody .classtr:nth-child(2n) {
+  background-color: #c3c3c344;
 }
 
 .classthead .classth {
-  width: 90px;
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
+  padding: 15px 0px;
+  font-size: 12px;
+  font-weight: 300;
   color: #fff;
 }
 
@@ -437,14 +442,14 @@ body {
 }
 
 .classtbody .classtr:hover {
-  background-color: rgba(22, 25, 37, 0.096);
+  background-color: rgba(130, 130, 209, 0.459);
 }
 
 .classtbody .classtd {
   text-align: center;
 
-  padding-top: 10px;
-  font-size: 14px;
+  font-size: 12px;
+  padding: 8px;
 }
 
 .classtd2 {
@@ -460,9 +465,9 @@ body {
 }
 
 .btn-details {
-  width: 120px;
-  margin: auto;
-  padding-top: 10px;
+  // width: 120px;
+  // margin: auto;
+  // padding-top: 10px;
 
   display: flex;
   flex-wrap: wrap;
