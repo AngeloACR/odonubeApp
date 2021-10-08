@@ -1,130 +1,81 @@
-<div class="modBox">
-  <div class="cardBox">
-    <form
-      class="formBox"
-      [formGroup]="registroDoctor"
-      (ngSubmit)="endRegistro()"
-    >
-      <div class="formContent">
-        <div class="formInput">
-          <label for="">Nombre del Doctor*</label>
-          <input
-            class="lInput"
-            type="text"
-            formControlName="name"
-            name="name"
-          />
-        </div>
-        <div
-          class="errorTag"
-          *ngIf="
-            fDoctor.name.errors?.required &&
-            (fDoctor.name.touched || fDoctor.name.dirty)
-          "
-        >
-          Por favor ingrese el nombre del doctor
-        </div>
-        <div class="formInput">
-          <label for="">Especialidad*</label>
-          <input
-            class="lInput"
-            type="text"
-            formControlName="speciality"
-            name="speciality"
-          />
-        </div>
-        <div
-          class="errorTag"
-          *ngIf="
-            fDoctor.speciality.errors?.required &&
-            (fDoctor.speciality.touched || fDoctor.speciality.dirty)
-          "
-        >
-          Por favor ingrese la especialidad del doctor
-        </div>
-        <div class="formInput">
-          <label for="">Cualificación*</label>
-          <input
-            class="lInput"
-            type="text"
-            formControlName="qualification"
-            name="qualification"
-          />
-        </div>
-        <div
-          class="errorTag"
-          *ngIf="
-            fDoctor.qualification.errors?.required &&
-            (fDoctor.qualification.touched || fDoctor.qualification.dirty)
-          "
-        >
-          Por favor ingrese la cualificación del doctor
-        </div>
-        <div class="formInput">
-          <label for="">Direcciòn*</label>
-          <input
-            class="lInput"
-            type="text"
-            formControlName="address"
-            name="address"
-          />
-        </div>
-        <div
-          class="errorTag"
-          *ngIf="
-            fDoctor.address.errors?.required &&
-            (fDoctor.address.touched || fDoctor.address.dirty)
-          "
-        >
-          Por favor ingrese una dirección
-        </div>
-        <div class="formInput">
-          <label for="">Número de contacto*</label>
-          <input
-            class="lInput"
-            type="text"
-            formControlName="contact"
-            name="contact"
-          />
-        </div>
-        <div
-          class="errorTag"
-          *ngIf="
-            fDoctor.contact.errors?.required &&
-            (fDoctor.contact.touched || fDoctor.contact.dirty)
-          "
-        >
-          Por favor ingrese el número de contacto del doctor
-        </div>
-        <div class="formInput">
-          <label for="">Fecha*</label>
-          <input
-            class="lInput"
-            type="date"
-            formControlName="date"
-            name="date"
-          />
-        </div>
-        <div
-          class="errorTag"
-          *ngIf="
-            fDoctor.date.errors?.required &&
-            (fDoctor.date.touched || fDoctor.date.dirty)
-          "
-        >
-          Por favor ingrese la fecha de ingreso del doctor al sistema
+<div class="modBoxC">
+  <div class="titleBoxC">
+    icon Informacion del doctor
+  </div>
+  <div class="cardBoxC">
+    <form class="formBoxC" [formGroup]="registroDoctor" (ngSubmit)="endRegistro()">
+      <div class="inputsBoxC">
+        <div class="formContentC">
+          <div class="columnasInputsC">
+            <div>
+              <div class="formInputC">
+                <label for="">ID Doctor*</label>
+                <input class="lInputC inputSmall" type="text"  /> <!-- formControlName="qualification" name="qualification" -->
+              </div>
+              <!-- <div class="errorTagC" *ngIf="fDoctor.qualification.errors?.required && (fDoctor.qualification.touched || fDoctor.qualification.dirty)">
+                Por favor ingrese la cualificación del doctor
+              </div> -->
+              <div class="formInputC">
+                <label for="">Nombre del Doctor*</label>
+                <input class="lInputC" type="text" formControlName="name" name="name" />
+              </div>
+              <div class="errorTagC" *ngIf="fDoctor.name.errors?.required && (fDoctor.name.touched || fDoctor.name.dirty)">
+                Por favor ingrese el nombre del doctor
+              </div>
+              <div class="formInputC">
+                <label for="">Especialidad*</label>
+                <input class="lInputC" type="text" formControlName="speciality" name="speciality" />
+              </div>
+              <div class="errorTagC" *ngIf="fDoctor.speciality.errors?.required && (fDoctor.speciality.touched || fDoctor.speciality.dirty)">
+                Por favor ingrese la especialidad del doctor
+              </div>
+              <div class="formInputC">
+                <label for="">Cualificación*</label>
+                <input class="lInputC" type="text" formControlName="qualification" name="qualification" />
+              </div>
+              <div class="errorTagC" *ngIf="fDoctor.qualification.errors?.required && (fDoctor.qualification.touched || fDoctor.qualification.dirty)">
+                Por favor ingrese la cualificación del doctor
+              </div>
+            </div>
+            <div>
+              <div class="formInputC">
+                <label for="">Direcciòn*</label>
+                <textarea class="lInputC" rows="5" cols="50" formControlName="address" name="address" ></textarea>
+              </div>
+              <div class="errorTagC" *ngIf="fDoctor.address.errors?.required && (fDoctor.address.touched || fDoctor.address.dirty)">
+                Por favor ingrese una dirección
+              </div>
+              <div class="formInputC">
+                <label for="">Número de contacto*</label>
+                <input class="lInputC" type="text" formControlName="contact" name="contact" />
+              </div>
+              <div class="errorTagC" *ngIf="fDoctor.contact.errors?.required && (fDoctor.contact.touched || fDoctor.contact.dirty)">
+                Por favor ingrese el número de contacto del doctor
+              </div>
+              <div class="formInputC">
+                <label for="">Fecha*</label>
+                <input class="lInputC" type="date" formControlName="date" name="date" />
+              </div>
+              <div class="errorTagC" *ngIf="fDoctor.date.errors?.required && (fDoctor.date.touched || fDoctor.date.dirty)">
+                Por favor ingrese la fecha de ingreso del doctor al sistema
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <button type="submit" class="buttonBox">
-        <p>Registrar doctor</p>
-      </button>
+      <div class="filaButton">
+        <button type="submit" class="buttonBoxC">
+          <p>REGISTRAR</p>
+        </button>
+        <button class="buttonBoxC" style="margin: 0px 10px">
+          <p>RESET</p>
+        </button>
+        <button class="buttonBoxC">
+          <p>CERRAR</p>
+        </button>
+      </div>
     </form>
   </div>
 
-    <app-error
-    class="errorBox"
-    [msg]="errorMsg"
-    [ngClass]="showError"
-    (closeError)="closeError()"
-  ></app-error>
+  <app-error class="errorBox" [msg]="errorMsg" [ngClass]="showError" (closeError)="closeError()"></app-error>
 </div>

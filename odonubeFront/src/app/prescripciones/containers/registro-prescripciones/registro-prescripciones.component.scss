@@ -1,0 +1,156 @@
+$font3: "Montserrat", sans-serif;
+
+.modBoxC {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    background-color: #cecece;
+  
+    .titleBox {
+      width:100%; 
+      color:#fff; 
+      background-color: #073e41; 
+      padding:16px; 
+      text-align:left;
+    }
+}
+
+.cardBoxC {
+    width: 100%;
+    padding: 10px 20px 30px 20px;
+
+    .formBoxC {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+
+        .inputsBoxC {
+            display: grid;
+            grid-template-columns: 5fr 1fr; 
+            gap: 10px;
+            margin-top: 20px;
+
+            .formContentC {
+                border: 1px solid #9173733b;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // padding: 5px 30px;
+
+                .FilasInputsC {
+                    display: grid;
+                    grid-template-rows: 1fr 1fr;
+                    padding: 10px;
+
+                    .fila {
+                        display: flex;
+
+                        .input {
+                            margin: 5px;
+
+                            .formInputC {
+                                width: 100%;
+                                // margin: 10px;
+                                // padding: 5px 15px;
+                                display: flex;
+                                flex-direction: column;
+        
+                                label {
+                                    white-space: nowrap;
+                                    font-size: 11px;
+                                    font-family: $font3;
+                                }
+            
+                                .lInputC {
+                                    width: 100%;
+                                    font-size: 0.9em;
+                                    padding: 2px;
+                                    outline: none;
+                                    margin: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .botones {
+                    display: flex;
+                    flex-direction: column;
+                    margin: auto;
+                    width: 100%;
+
+                    .buttonBoxC {
+                        width: auto;
+                        margin: 7px;
+                        padding: 7px 0px;
+                        cursor: pointer;
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+
+        .listaMedicina {
+            width: 100%;
+
+            .formContentC {
+                border: 1px solid #9173733b;
+                display: flex;
+                flex-direction: column;
+
+                .fila {
+                    display: flex;
+
+                    .input {
+                        margin: 5px;
+
+                        .formInputC {
+                            width: 100%;
+                            // margin: 10px;
+                            // padding: 5px 15px;
+                            display: flex;
+                            flex-direction: column;
+    
+                            label {
+                                white-space: nowrap;
+                                font-size: 11px;
+                                font-family: $font3;
+                            }
+        
+                            .lInputC {
+                                width: 100%;
+                                font-size: 0.9em;
+                                padding: 2px;
+                                outline: none;
+                                margin: 5px;
+                            }
+                        }
+                    }
+                }
+
+                .botones {
+                    display: flex;
+                    flex-direction: column;
+                    margin: auto;
+                    width: 100%;
+
+                    .buttonBoxC {
+                        width: auto;
+                        margin: 7px;
+                        padding: 7px 0px;
+                        cursor: pointer;
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.errorTagC {
+    text-align: end;
+    font-size: 12px;
+    font-weight: 400;
+    color: red;
+}

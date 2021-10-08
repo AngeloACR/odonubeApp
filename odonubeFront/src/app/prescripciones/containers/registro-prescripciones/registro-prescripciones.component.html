@@ -1,1 +1,174 @@
-<p>registro-prescripciones works!</p>
+<div class="modBoxC">
+  <div class="titleBox">
+    icon Prescripcion
+  </div>
+  <div class="cardBoxC">
+    <form class="formBoxC" [formGroup]="registroPrescripcion" (ngSubmit)="endRegistro()">
+      <div class="inputsBoxC">
+        <div class="formContentC">
+          <div class="FilasInputsC">
+            <div class="fila">
+              <div class="input">
+                <div class="formInputC">
+                  <label for="">PRESCRIPCION#*</label>
+                  <input class="lInputC" type="number" formControlName="prescripcion" name="prescripcion" />
+                </div>
+                <div class="errorTagC" *ngIf="fPrescripcion.prescripcion.errors?.required && (fPrescripcion.prescripcion.touched || fPrescripcion.prescripcion.dirty)">
+                  Por favor ingrese el numero de prescripcion
+                </div>
+              </div>
+              <div class="input">
+                <div class="formInputC">
+                  <label for="">Fecha*</label>
+                  <input class="lInputC" type="date" formControlName="date" name="date" />
+                </div>
+                <div class="errorTagC" *ngIf="fPrescripcion.date.errors?.required && (fPrescripcion.date.touched || fPrescripcion.date.dirty)">
+                  Por favor ingrese la fecha
+                </div>
+              </div>
+              <div class="input">
+                <div class="formInputC">
+                  <label for="">APPNT#*</label>
+                  <input class="lInputC" type="number" formControlName="appnt" name="appnt" />
+                </div>
+                <div class="errorTagC" *ngIf="fPrescripcion.appnt.errors?.required && (fPrescripcion.appnt.touched || fPrescripcion.appnt.dirty)">
+                  Por favor ingrese el appnt
+                </div>
+              </div>
+              <div class="input">
+                <div class="formInputC">
+                  <label for="">Visita*</label>
+                  <input class="lInputC" type="number" formControlName="visit" name="visit" />
+                </div>
+                <div class="errorTagC" *ngIf="fPrescripcion.visit.errors?.required && (fPrescripcion.visit.touched || fPrescripcion.visit.dirty)">
+                  Por favor ingrese el numero de visita
+                </div>
+              </div>
+            </div>
+            <div class="fila">
+              <div class="input">
+                <div class="formInputC">
+                  <label for="">ID del paciente*</label>
+                  <input class="lInputC" type="number" formControlName="idPatient" name="idPatient" />
+                </div>
+                <div class="errorTagC" *ngIf="fPrescripcion.idPatient.errors?.required && (fPrescripcion.idPatient.touched || fPrescripcion.idPatient.dirty)">
+                  Por favor ingrese el id del paciente
+                </div>
+              </div>
+              <div class="input">
+                <div class="formInputC">
+                  <label for="">Nombre del paciente*</label>
+                  <input class="lInputC" type="text" formControlName="patientName" name="patientName" />
+                </div>
+                <div class="errorTagC" *ngIf="fPrescripcion.patientName.errors?.required && (fPrescripcion.patientName.touched || fPrescripcion.patientName.dirty)">
+                  Por favor ingrese la el nombre del paciente
+                </div>
+              </div>
+              <div class="input">
+                <div class="formInputC">
+                  <label for="">Edad del paciente*</label>
+                  <input class="lInputC" type="number" formControlName="patientAge" name="patientAge" />
+                </div>
+                <div class="errorTagC" *ngIf="fPrescripcion.patientAge.errors?.required && (fPrescripcion.patientAge.touched || fPrescripcion.patientAge.dirty)">
+                  Por favor ingrese la edad del paciente
+                </div>
+              </div>
+              <div class="input">
+                <div class="formInputC">
+                  <label for="">Género</label>
+                  <select class="lInputC" formControlName="patientGender">
+                    <option value="Masculino" selected="true">
+                      Masculino
+                    </option>
+                    <option value="Femenino">Femenino</option>
+                  </select>
+                </div>
+                <div class="errorTagC" *ngIf="fPrescripcion.patientGender.errors?.required && (fPrescripcion.patientGender.touched || fPrescripcion.patientGender.dirty)">
+                  Por favor ingrese el genero del paciente
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="formContentC">
+          <div class="botones">
+            <button type="submit" class="buttonBoxC">
+              <p>REGISTRAR</p>
+            </button>
+            <button class="buttonBoxC">
+              <p>RESET</p>
+            </button>
+            <button class="buttonBoxC">
+              <p>CERRAR</p>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="listaMedicina">
+        <div class="formContentC">
+          <div class="fila">
+            <div class="input">
+              <div class="formInputC">
+                <label for="">Nombre de la medicina</label>
+                <select class="lInputC" formControlName="patientGender">
+                  <option value="Masculino" selected="true">
+                    Masculino
+                  </option>
+                  <option value="Femenino">Femenino</option>
+                </select>
+              </div>
+            </div>
+            <div class="input">
+              <div class="formInputC">
+                <label for="">Dodge</label>
+                <input class="lInputC" type="text" formControlName="date" name="date" />
+              </div>
+              <div class="errorTagC" *ngIf="fPrescripcion.date.errors?.required && (fPrescripcion.date.touched || fPrescripcion.date.dirty)">
+                Por favor ingrese la fecha
+              </div>
+            </div>
+            <div class="input">
+              <div class="formInputC">
+                <label for="">Duracion</label>
+                <input class="lInputC" type="text" formControlName="appnt" name="appnt" />
+              </div>
+              <!-- <div class="errorTagC" *ngIf="fPrescripcion.appnt.errors?.required && (fPrescripcion.appnt.touched || fPrescripcion.appnt.dirty)">
+                Por favor ingrese el appnt
+              </div> -->
+            </div>
+            <div class="input">
+              <div class="formInputC">
+                <label for="">Cantidad</label>
+                <input class="lInputC" type="number" formControlName="visit" name="visit" />
+              </div>
+              <!-- <div class="errorTagC" *ngIf="fPrescripcion.visit.errors?.required && (fPrescripcion.visit.touched || fPrescripcion.visit.dirty)">
+                Por favor ingrese el numero de visita
+              </div> -->
+            </div>
+            <div class="input">
+              <div class="formInputC">
+                <label for="">Remark</label>
+                <input class="lInputC" type="text" formControlName="visit" name="visit" />
+              </div>
+              <!-- <div class="errorTagC" *ngIf="fPrescripcion.visit.errors?.required && (fPrescripcion.visit.touched || fPrescripcion.visit.dirty)">
+                Por favor ingrese el numero de visita
+              </div> -->
+            </div>
+              <button>
+                +
+              </button>
+              
+          </div>
+          
+          <div class="fila">
+            
+            
+          </div>
+          
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <app-error class="errorBox" [msg]="errorMsg" [ngClass]="showError" (closeError)="closeError()"></app-error>
+</div>
