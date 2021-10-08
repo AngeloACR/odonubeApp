@@ -65,11 +65,6 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "sslKey": "src/ssl/ca.key",
-            "sslCert": "src/ssl/ca.crt",
-            "ssl": true
-          },
           "configurations": {
             "production": {
               "browserTarget": "odonubeFront:build:production"
