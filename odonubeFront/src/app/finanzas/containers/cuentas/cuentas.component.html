@@ -1,1 +1,84 @@
-<p>cuentas works!</p>
+<div class="modBoxC">
+  <div class="titleBox">
+    icon Registrar cuenta
+  </div>
+  <div class="cardBoxC">
+    <form class="formBoxC" [formGroup]="registroCuenta" (ngSubmit)="endRegistro()">
+      <div class="inputsBoxC">
+        <div class="formContentC">
+          <div class="FilasInputsC">
+            <div class="fila">
+              <div class="input small">
+                <div class="formInputC">
+                  <label for="">Cuenta ID</label>
+                  <input class="lInputC" type="number" formControlName="idcuenta" name="idcuenta" /> 
+                </div>
+                <!-- <div class="errorTagC" *ngIf="fCuenta.Cuenta.errors?.required && (fCuenta.Cuenta.touched || fCuenta.Cuenta.dirty)">
+                  Por favor ingrese el numero de Cuenta
+                </div> -->
+              </div>
+              <div class="input">
+                <div class="formInputC">
+                  <label for="">Nombre de cuenta</label>
+                  <input class="lInputC" type="text" formControlName="name" name="name" />
+                </div>
+                <div class="errorTagC"
+                  *ngIf="fCuenta.name.errors?.required && (fCuenta.name.touched || fCuenta.name.dirty)">
+                  Por favor ingrese la fecha
+                </div>
+              </div>
+              <div style="display: flex;">
+                <div class="input" style="width: 50%">
+                  <div class="formInputC">
+                    <label for="">Tipo de cuenta</label>
+                    <select class="lInputC" formControlName="typecuenta"> 
+                      <option value="expense" selected="true">
+                        Expense
+                      </option>
+                      <option value="noexpense">No Expense</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input" style="width: 50%; margin-left: 50px">
+                  <div class="formInputC">
+                    <label for="">Estatus</label>
+                    <select class="lInputC" formControlName="status"> 
+                      <option value="active" selected="true">
+                        Activo
+                      </option>
+                      <option value="inactive">Inactivo</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="formContentC">
+            <div class="botones">
+              <button type="submit" class="buttonBoxC">
+                <p>REGISTRAR</p>
+              </button>
+              <button class="buttonBoxC">
+                <p>RESET</p>
+              </button>
+              <button class="buttonBoxC">
+                <p>CERRAR</p>
+              </button>
+            </div>
+        </div>
+      </div>  
+      <div class="listaCuenta">
+        <div class="formContentC">          
+          <div class="fila">
+             <!-- Agregar tabla de las cuentas -->
+          </div>
+          
+        </div>
+      </div>
+      
+    </form>
+  </div>
+
+  <app-error class="errorBox" [msg]="errorMsg" [ngClass]="showError" (closeError)="closeError()"></app-error>
+</div>
