@@ -1,1 +1,104 @@
-<p>registrar-usuario works!</p>
+<div class="modBoxC">
+    <div class="titleBox">
+      icon Informacion del Usuario
+    </div>
+    <div class="cardBoxC">
+      <form class="formBoxC" [formGroup]="registroUsuario" (ngSubmit)="endRegistro()">
+        <div class="inputsBoxC">
+          <div class="formContentC">
+            <div class="columnasInputsC">
+              <div>
+                <div class="formInputC">
+                    <label for="">Usuario ID</label>
+                    <input class="lInputC" type="text" formControlName="id" id="id" />
+                  </div>
+                  <div class="errorTagC" *ngIf="fUsuario.id.errors?.required && (fUsuario.id.touched || fUsuario.id.dirty)">
+                    Por favor ingrese el id del Usuario
+                </div>
+                <div class="formInputC">
+                  <label for="">Nombre completo</label>
+                  <input class="lInputC" type="text" formControlName="name" name="name" />
+                </div>
+                <div class="errorTagC" *ngIf="fUsuario.name.errors?.required && (fUsuario.name.touched || fUsuario.name.dirty)">
+                  Por favor ingrese su nombre
+                </div>
+                <div class="formInputC">
+                  <label for="">Usuario</label>
+                  <input class="lInputC" type="text" formControlName="user" name="user" />
+                </div>
+                <div class="errorTagC" *ngIf="fUsuario.user.errors?.required && (fUsuario.user.touched || fUsuario.user.dirty)">
+                  Por favor ingrese el nombre de Usuario
+                </div>
+                <div class="formInputC">
+                  <label for="">Contraseña</label>
+                  <input class="lInputC" type="password" formControlName="password" name="password" />
+                </div>
+                <div class="errorTagC" *ngIf="fUsuario.password.errors?.required && (fUsuario.password.touched || fUsuario.password.dirty)">
+                  Por favor ingrese una contraseña
+                </div>
+                <div class="formInputC">
+                  <label for="">Re Contraseña</label>
+                  <input class="lInputC" type="password" formControlName="repassword" name="repassword" />
+                </div>
+                <div class="errorTagC" *ngIf="fUsuario.repassword.errors?.required && (fUsuario.repassword.touched || fUsuario.repassword.dirty)">
+                  Por favor ingrese la contraseña otra vez
+                </div>
+              </div>
+              <div>
+                <div class="formInputC">
+                  <label for="">Designacion</label>
+                  <input class="lInputC" type="text" formControlName="descripcion" name="descripcion" />
+                </div>
+                <div class="errorTagC" *ngIf="fUsuario.descripcion.errors?.required && (fUsuario.descripcion.touched || fUsuario.descripcion.dirty)">
+                  Por favor ingrese la descripcion
+                </div>
+                <div class="formInputC">
+                  <label for="">Número de contacto</label>
+                  <input class="lInputC" type="text" formControlName="contact" name="contact" />
+                </div>
+                <div class="errorTagC" *ngIf="fUsuario.contact.errors?.required && (fUsuario.contact.touched || fUsuario.contact.dirty)">
+                  Por favor ingrese el número de contacto del Usuario
+                </div>
+                <div class="formInputC">
+                    <label for="">Tipo</label>
+                    <select class="lInputC" formControlName="tipo">
+                      <option value="admin">
+                        admin
+                      </option>
+                      <option value="user" selected="true">user</option>
+                    </select>
+                </div>
+                <div class="formInputC">
+                  <label for="">Fecha</label>
+                  <input class="lInputC" type="date" formControlName="date" name="date" />
+                </div>
+                <div class="errorTagC" *ngIf="fUsuario.date.errors?.required && (fUsuario.date.touched || fUsuario.date.dirty)">
+                  Por favor ingrese la fecha
+                </div>
+              </div>
+            </div>   
+          </div>
+          <div class="formContentC">
+            <div class="formInputC">
+              <label for="nuestroinput" id="nuestroinput">Imagen*</label>
+              <input class="file" id="nuestroinput" type="file"  name="img" /> <!-- formControlName="img" -->
+              <p>Nota: Esta imagen tal vez pueda aparecer distorcionada en la pantalla.</p>
+            </div>
+          </div>
+        </div>
+        <div class="filaButton">
+          <button type="submit" class="buttonBoxC">
+            <p>REGISTRAR</p>
+          </button>
+          <button class="buttonBoxC" style="margin: 0px 10px">
+            <p>RESET</p>
+          </button>
+          <button class="buttonBoxC">
+            <p>CERRAR</p>
+          </button>
+        </div>
+      </form>
+    </div>
+  
+    <app-error class="errorBox" [msg]="errorMsg" [ngClass]="showError" (closeError)="closeError()"></app-error>
+  </div>

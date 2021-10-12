@@ -1,1 +1,65 @@
-<p>clinica works!</p>
+<div class="modBoxC">
+    <div class="titleBox">
+      icon Informacion de Clinica
+    </div>
+    <div class="cardBoxC">
+      <form class="formBoxC" [formGroup]="registroClinica" (ngSubmit)="endRegistro()">
+        <div class="inputsBoxC">
+          <div class="formContentC">
+            <div class="formInputC">
+              <label for="">Nombre de la Clinica*</label>
+              <input class="lInputC" type="text" formControlName="name" name="name" />
+            </div>
+            <div class="errorTagC" *ngIf="fClinica.name.errors?.required && (fClinica.name.touched || fClinica.name.dirty)">
+              Por favor ingrese el nombre de la Clinica
+            </div>
+            <div class="formInputC">
+              <label for="">Numero de telefono*</label>
+              <input class="lInputC" type="text" formControlName="phone" name="phone" />
+            </div>
+            <div class="errorTagC" *ngIf="fClinica.phone.errors?.required && (fClinica.phone.touched || fClinica.phone.dirty)">
+              Por favor ingrese el numero de telefono de la Clinica
+            </div>
+            <div class="formInputC">
+              <label for="">Direcciòn</label>
+              <textarea class="lInputC" rows="3" cols="50" formControlName="address" name="address"></textarea>
+            </div>
+            <div class="errorTagC" *ngIf="fClinica.address.errors?.required && (fClinica.address.touched || fClinica.address.dirty)">
+              Por favor ingrese una dirección
+            </div>
+            <div class="formInputC">
+              <label for="">Reporte de cabecera</label>
+              <textarea class="lInputC" rows="3" cols="50" formControlName="reporth" name="reporth"></textarea>
+            </div>
+            <div class="errorTagC" *ngIf="fClinica.reporth.errors?.required && (fClinica.reporth.touched || fClinica.reporth.dirty)">
+              Por favor ingrese el reporte de cabecera
+            </div>
+            <div class="formInputC">
+              <label for="">Reporte de pie</label>
+              <textarea class="lInputC" rows="3" cols="50" formControlName="reportf" name="reportf"></textarea>
+            </div>
+            <div class="errorTagC" *ngIf="fClinica.reportf.errors?.required && (fClinica.reportf.touched || fClinica.reportf.dirty)">
+              Por favor ingrese una dirección
+            </div>
+          </div>
+          <div class="formContentC">
+            <div class="formInputC" style="justify-content: center; align-items:center;">
+              <label for="nuestroinput" id="nuestroinput" style="width: 100% !important; height: 260px;">Imagen</label>
+              <input class="file" id="nuestroinput" type="file"  name="img" /> <!-- formControlName="img" -->
+              <p style="text-align:center">Nota: Esta imagen tal vez pueda aparecer distorcionada en la pantalla.</p>
+            </div>
+          </div>
+        </div>
+        <div class="filaButton">
+          <button type="submit" class="buttonBoxC">
+            <p>REGISTRAR</p>
+          </button>
+          <button class="buttonBoxC">
+            <p>CERRAR</p>
+          </button>
+        </div>
+      </form>
+    </div>
+  
+    <app-error class="errorBox" [msg]="errorMsg" [ngClass]="showError" (closeError)="closeError()"></app-error>
+  </div>
