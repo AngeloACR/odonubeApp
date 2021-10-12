@@ -1,1 +1,107 @@
-<p>registro-vuchers works!</p>
+<div class="modBoxC">
+    <div class="titleBox">
+        icon Vouche
+    </div>
+    <div class="cardBoxC">
+        <form class="formBoxC" [formGroup]="registroVauche" (ngSubmit)="endRegistro()">
+            <div class="formContentC">
+                <div class="FilasInputsC">
+                    <div class="fila">
+                        <div class="input small">
+                            <div class="formInputC">
+                                <label for="">Vauche ID</label>
+                                <input class="lInputC" type="number" name="idVauche" formControlName="idVauche"/> 
+                            </div>
+                            <!-- <div class="errorTagC" *ngIf="fVauche.Vauche.errors?.required && (fVauche.Vauche.touched || fVauche.Vauche.dirty)">
+                                Por favor ingrese el numero de Vauche
+                            </div> -->
+                        </div>
+                        <div class="input">
+                            <div class="formInputC">
+                                <label for="" style="margin-bottom: 0.5rem;">Tipo de vauche</label>
+                                <label for="" style="margin-bottom: 0.7rem; display: flex; align-items:center"> 
+                                    <input class="" type="radio" name="tipo" formControlName="tipo"/><p style="padding-left: 3px; display: inline-block; margin-right:5px">Revenue</p> 
+                                    <input class="" type="radio" name="tipo" formControlName="tipo"/><p style="padding-left: 3px; display: inline-block">Expense</p> 
+                                    
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <div class="formInputC">
+                                <label for="">Nombre de cuenta</label>
+                                <select class="lInputC" >  <!-- formControlName="namecuenta" -->
+                                    <option value="valor1" selected="true">Subcripcion</option>
+                                    <option value="valor2">Electric charges</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <div class="formInputC">
+                                <label for="">Fecha</label>
+                                <input class="lInputC" type="date"  name="date" formControlName="date" /> 
+                            </div>
+                            <div class="errorTagC"
+                                *ngIf="fVauche.date.errors?.required && (fVauche.date.touched || fVauche.date.dirty)">
+                                Por favor ingrese la fecha
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fila">
+                        <div class="input">
+                            <div class="formInputC"> 
+                                <label for="">Numero de referencia</label>
+                                <input class="lInputC" type="text" name="referencia" formControlName="referencia" />  
+                            </div>
+                            <div class="errorTagC" *ngIf="fVauche.referencia.errors?.required && (fVauche.referencia.touched || fVauche.referencia.dirty)">
+                                Por favor ingrese el numero de referencia
+                            </div>
+                        </div>
+                        <div class="input">
+                            <div class="formInputC">
+                                <label for="">Monto</label>
+                                <input class="lInputC" type="text" name="monto" formControlName="monto"/> 
+                            </div>
+                            <div class="errorTagC" *ngIf="fVauche.monto.errors?.required && (fVauche.monto.touched || fVauche.monto.dirty)">
+                                Por favor ingrese el monto
+                            </div>
+                        </div>
+                        <div class="input small">
+                            <div class="formInputC">
+                                <label for="">Metodo de pago</label>
+                                <select class="lInputC"  >   <!-- formControlName="metodo" -->
+                                    <option value="efectivo" selected="true">Efectivo</option>
+                                    <option value="credito">Credito</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <div class="formInputC">
+                                <label for="">Observación</label>
+                                <input class="lInputC" type="text"  name="observacion" formControlName="observacion"/> 
+                            </div>
+                            <div class="errorTagC"
+                                *ngIf="fVauche.observacion.errors?.required && (fVauche.observacion.touched || fVauche.observacion.dirty)">
+                                Por favor ingrese la observacion
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formContentC">
+                <div class="botones">
+                    <button type="submit" class="buttonBoxC">
+                        <p>REGISTRAR</p>
+                    </button>
+                    <button class="buttonBoxC">
+                        <p>RESET</p>
+                    </button>
+                    <button class="buttonBoxC">
+                        <p>CERRAR</p>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <app-error class="errorBox" [msg]="errorMsg" [ngClass]="showError" (closeError)="closeError()"></app-error>
+</div>
